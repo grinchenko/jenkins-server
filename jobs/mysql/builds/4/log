@@ -1,0 +1,16 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/mysql
+[mysql] $ /bin/sh -xe /tmp/jenkins735257868963618882.sh
++ bash build.sh
+mysql
+mysql
+Sending build context to Docker daemon  3.072kB
+Step 1/2 : FROM ubuntu:14.04
+ ---> dc4491992653
+Step 2/2 : RUN apt-get update  && DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server
+ ---> Using cache
+ ---> 37c789cd0c2e
+Successfully built 37c789cd0c2e
+Successfully tagged mysql:latest
+8af06625d4e0c34ef4568f1283a912349d56a0ae9f7e3e12ea7ad3a4515f25b5
+Finished: SUCCESS

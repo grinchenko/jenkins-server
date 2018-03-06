@@ -1,0 +1,24 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/nginx
+[nginx] $ /bin/sh -xe /tmp/jenkins1182585708256576404.sh
++ bash build.sh
+Error response from daemon: No such container: passenger-ruby
+Error: No such container: passenger-ruby
+Sending build context to Docker daemon  3.584kB
+Step 1/16 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/16 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Using cache
+ ---> 9f7150e1f8c5
+Step 3/16 : RUN apt-get install -y dirmngr gnupg
+ ---> Running in b550efaf0609
+Reading package lists...
+Building dependency tree...
+Reading state information...
+[91mE[0m[91m: [0m[91mUnable to locate package dirmngr[0m[91m
+[0mThe command '/bin/sh -c apt-get install -y dirmngr gnupg' returned a non-zero code: 100
+Unable to find image 'passenger-ruby:latest' locally
+docker: Error response from daemon: pull access denied for passenger-ruby, repository does not exist or may require 'docker login'.
+See 'docker run --help'.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

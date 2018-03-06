@@ -1,0 +1,15 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/slavedockerdeploy
+[slavedockerdeploy] $ /bin/sh -xe /tmp/jenkins1741596697929007206.sh
++ docker run -i hello-world bash
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pulling fs layer
+ca4f61b1923c: Verifying Checksum
+ca4f61b1923c: Download complete
+ca4f61b1923c: Pull complete
+Digest: sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7
+Status: Downloaded newer image for hello-world:latest
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused "exec: \"bash\": executable file not found in $PATH": unknown.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

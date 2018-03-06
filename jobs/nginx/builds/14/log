@@ -1,0 +1,177 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/nginx
+[nginx] $ /bin/sh -xe /tmp/jenkins8775845253163644521.sh
++ bash build.sh
+passenger-ruby
+passenger-ruby
+Sending build context to Docker daemon  4.096kB
+Step 1/32 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/32 : RUN apt-get update
+ ---> Using cache
+ ---> 807df0336fa9
+Step 3/32 : RUN apt-get install -y dirmngr gnupg
+ ---> Using cache
+ ---> d47f19aad663
+Step 4/32 : RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+ ---> Using cache
+ ---> b17f1711d09e
+Step 5/32 : RUN apt-get install -y apt-transport-https ca-certificates
+ ---> Using cache
+ ---> e1ac4c9935c1
+Step 6/32 : RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+ ---> Using cache
+ ---> e8fc7da0f49b
+Step 7/32 : RUN apt-get update
+ ---> Using cache
+ ---> 432c8824179b
+Step 8/32 : RUN apt-get install -y nginx-extras passenger
+ ---> Using cache
+ ---> cfbfdee54d4c
+Step 9/32 : RUN sed 's/\# include \/etc\/nginx\/passenger.conf;/include \/etc\/nginx\/passenger.conf;/' -i /etc/nginx/nginx.conf
+ ---> Using cache
+ ---> 8473a632eb44
+Step 10/32 : RUN service nginx restart
+ ---> Using cache
+ ---> 9f8ff1a2944e
+Step 11/32 : RUN apt-get install -y git
+ ---> Using cache
+ ---> e8501b602332
+Step 12/32 : RUN cd /var/
+ ---> Using cache
+ ---> 096887d4a808
+Step 13/32 : RUN git clone https://github.com/phusion/passenger-ruby-rails-demo.git
+ ---> Using cache
+ ---> dcb24ce65cb4
+Step 14/32 : RUN cd passenger-ruby-rails-demo
+ ---> Using cache
+ ---> d1bd473d31a8
+Step 15/32 : RUN echo 'gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"' > Gemfile
+ ---> Using cache
+ ---> 8f0a02fe80e3
+Step 16/32 : RUN apt-get install -y curl
+ ---> Using cache
+ ---> 45ac42f63726
+Step 17/32 : RUN apt-get install -y gem
+ ---> Using cache
+ ---> 5c2dbe3bcd0a
+Step 18/32 : RUN apt-get install -y ruby-dev
+ ---> Using cache
+ ---> 221cf3634ecf
+Step 19/32 : RUN apt-get install -y make
+ ---> Using cache
+ ---> 22cab760f42c
+Step 20/32 : RUN apt-get install -y gcc
+ ---> Using cache
+ ---> 1369741bac6f
+Step 21/32 : RUN gem install -y json
+ ---> Using cache
+ ---> f67ed8f97c85
+Step 22/32 : RUN apt-get install -y zlib1g-dev
+ ---> Using cache
+ ---> 82d2fd461d22
+Step 23/32 : RUN apt-get update
+ ---> Running in 91213ff4d94b
+Ign http://archive.ubuntu.com trusty InRelease
+Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Hit http://archive.ubuntu.com trusty-backports InRelease
+Get:3 https://oss-binaries.phusionpassenger.com trusty InRelease
+Ign https://oss-binaries.phusionpassenger.com trusty InRelease
+Hit http://archive.ubuntu.com trusty Release.gpg
+Hit https://oss-binaries.phusionpassenger.com trusty Release.gpg
+Hit http://archive.ubuntu.com trusty Release
+Hit https://oss-binaries.phusionpassenger.com trusty Release
+Get:4 http://security.ubuntu.com trusty-security/universe Sources [83.2 kB]
+Get:5 http://security.ubuntu.com trusty-security/main amd64 Packages [896 kB]
+Get:6 http://archive.ubuntu.com trusty-updates/universe Sources [249 kB]
+Get:7 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1320 kB]
+Get:8 http://security.ubuntu.com trusty-security/restricted amd64 Packages [18.1 kB]
+Get:9 http://security.ubuntu.com trusty-security/universe amd64 Packages [267 kB]
+Get:10 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4723 B]
+Get:11 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [21.4 kB]
+Get:12 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [576 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [16.0 kB]
+Hit http://archive.ubuntu.com trusty-backports/main amd64 Packages
+Hit https://oss-binaries.phusionpassenger.com trusty/main amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/restricted amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages
+Hit http://archive.ubuntu.com trusty/universe Sources
+Hit http://archive.ubuntu.com trusty/main amd64 Packages
+Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages
+Fetched 3582 kB in 10s (355 kB/s)
+Reading package lists...
+Removing intermediate container 91213ff4d94b
+ ---> 440c4e960211
+Step 24/32 : RUN apt-get install libxml2-dev
+ ---> Running in c01716fd57e5
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  pkg-config
+The following NEW packages will be installed:
+  libxml2-dev
+0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
+Need to get 630 kB of archives.
+After this operation, 2931 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libxml2-dev amd64 2.9.1+dfsg1-3ubuntu4.12 [630 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (TERM is not set, so the dialog frontend is not usable.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 630 kB in 1s (575 kB/s)
+Selecting previously unselected package libxml2-dev:amd64.
+(Reading database ... 22839 files and directories currently installed.)
+Preparing to unpack .../libxml2-dev_2.9.1+dfsg1-3ubuntu4.12_amd64.deb ...
+Unpacking libxml2-dev:amd64 (2.9.1+dfsg1-3ubuntu4.12) ...
+Setting up libxml2-dev:amd64 (2.9.1+dfsg1-3ubuntu4.12) ...
+Removing intermediate container c01716fd57e5
+ ---> d24c1aa6bdd0
+Step 25/32 : RUN apt-get install libxslt-dev
+ ---> Running in af3ce3d01336
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  libxslt1-dev
+0 upgraded, 1 newly installed, 0 to remove and 7 not upgraded.
+Need to get 406 kB of archives.
+After this operation, 2451 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libxslt1-dev amd64 1.1.28-2ubuntu0.1 [406 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (TERM is not set, so the dialog frontend is not usable.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 406 kB in 1s (392 kB/s)
+Selecting previously unselected package libxslt1-dev:amd64.
+(Reading database ... 22904 files and directories currently installed.)
+Preparing to unpack .../libxslt1-dev_1.1.28-2ubuntu0.1_amd64.deb ...
+Unpacking libxslt1-dev:amd64 (1.1.28-2ubuntu0.1) ...
+Setting up libxslt1-dev:amd64 (1.1.28-2ubuntu0.1) ...
+Removing intermediate container af3ce3d01336
+ ---> 72961e1eb7b0
+Step 26/32 : RUN gem install nokogiri -v '1.6.6.2'
+ ---> Running in 63950f728a2c
+Building native extensions.  This could take a while...
+[91mERROR:  Error installing nokogiri:
+	ERROR: Failed to build gem native extension.
+
+        /usr/bin/ruby1.9.1 extconf.rb
+
+Gem files will remain installed in /var/lib/gems/1.9.1/gems/nokogiri-1.6.6.2 for inspection.
+Results logged to /var/lib/gems/1.9.1/gems/nokogiri-1.6.6.2/ext/nokogiri/gem_make.out
+[0mThe command '/bin/sh -c gem install nokogiri -v '1.6.6.2'' returned a non-zero code: 1
+3b11d6039e959d2a5ca764812bd34b383dc3fc2467c492341b4ab604c0ac8006
+docker: Error response from daemon: driver failed programming external connectivity on endpoint passenger-ruby (183e68be247ce4357f11e3623b348c3ffbd8c199a1fba50e2fc5bbcd41bafd5f): Bind for 0.0.0.0:80 failed: port is already allocated.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

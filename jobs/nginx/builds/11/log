@@ -1,0 +1,81 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/nginx
+[nginx] $ /bin/sh -xe /tmp/jenkins8410950976468955169.sh
++ bash build.sh
+passenger-ruby
+passenger-ruby
+Sending build context to Docker daemon  4.096kB
+Step 1/29 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/29 : RUN apt-get update
+ ---> Using cache
+ ---> 807df0336fa9
+Step 3/29 : RUN apt-get install -y dirmngr gnupg
+ ---> Using cache
+ ---> d47f19aad663
+Step 4/29 : RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+ ---> Using cache
+ ---> b17f1711d09e
+Step 5/29 : RUN apt-get install -y apt-transport-https ca-certificates
+ ---> Using cache
+ ---> e1ac4c9935c1
+Step 6/29 : RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+ ---> Using cache
+ ---> e8fc7da0f49b
+Step 7/29 : RUN apt-get update
+ ---> Using cache
+ ---> 432c8824179b
+Step 8/29 : RUN apt-get install -y nginx-extras passenger
+ ---> Using cache
+ ---> cfbfdee54d4c
+Step 9/29 : RUN sed 's/\# include \/etc\/nginx\/passenger.conf;/include \/etc\/nginx\/passenger.conf;/' -i /etc/nginx/nginx.conf
+ ---> Using cache
+ ---> 8473a632eb44
+Step 10/29 : RUN service nginx restart
+ ---> Using cache
+ ---> 9f8ff1a2944e
+Step 11/29 : RUN apt-get install -y git
+ ---> Using cache
+ ---> e8501b602332
+Step 12/29 : RUN cd /var/
+ ---> Using cache
+ ---> 096887d4a808
+Step 13/29 : RUN git clone https://github.com/phusion/passenger-ruby-rails-demo.git
+ ---> Using cache
+ ---> dcb24ce65cb4
+Step 14/29 : RUN cd passenger-ruby-rails-demo
+ ---> Using cache
+ ---> d1bd473d31a8
+Step 15/29 : RUN echo 'gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"' > Gemfile
+ ---> Using cache
+ ---> 8f0a02fe80e3
+Step 16/29 : RUN apt-get install -y curl
+ ---> Using cache
+ ---> 45ac42f63726
+Step 17/29 : RUN apt-get install -y gem
+ ---> Using cache
+ ---> 5c2dbe3bcd0a
+Step 18/29 : RUN apt-get install -y ruby-dev
+ ---> Using cache
+ ---> 221cf3634ecf
+Step 19/29 : RUN apt-get install -y make
+ ---> Using cache
+ ---> 22cab760f42c
+Step 20/29 : RUN apt-get install -y gcc
+ ---> Using cache
+ ---> 1369741bac6f
+Step 21/29 : RUN gem install -y json
+ ---> Using cache
+ ---> f67ed8f97c85
+Step 22/29 : RUN apt-get install -y zlib1g-dev
+ ---> Using cache
+ ---> 82d2fd461d22
+Step 23/29 : RUN gem install  nokogiri
+ ---> Running in 5266c317da6c
+[91mERROR:  Error installing nokogiri:
+	nokogiri requires Ruby version >= 2.1.0.
+[0mThe command '/bin/sh -c gem install  nokogiri' returned a non-zero code: 1
+9c8a40bfccfa26334f2a4a53c354d5cef2a5d5ee77f4ec90775f488b7d780ff5
+docker: Error response from daemon: driver failed programming external connectivity on endpoint passenger-ruby (8421d61bae9a275523183100f1180af960956279431ea09fbf018dc32ff1a459): Bind for 0.0.0.0:80 failed: port is already allocated.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,29 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/slavedockerdeploy
+[slavedockerdeploy] $ /bin/sh -xe /tmp/jenkins6465799036076601297.sh
++ bash build.sh
+Sending build context to Docker daemon   5.12kB
+Step 1/7 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/7 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Using cache
+ ---> 9f7150e1f8c5
+Step 3/7 : RUN apt-get update && apt-get install -y nginx
+ ---> Using cache
+ ---> 8b90eb1b217e
+Step 4/7 : ADD nginx.conf /etc/nginx/
+ ---> Using cache
+ ---> a1293f3f8685
+Step 5/7 : ADD index.html /www/
+ ---> Using cache
+ ---> 0597eea809be
+Step 6/7 : EXPOSE 80
+ ---> Using cache
+ ---> 03ef90af8ac7
+Step 7/7 : CMD /usr/sbin/nginx
+ ---> Using cache
+ ---> 52eb220f46f7
+Successfully built 52eb220f46f7
+Successfully tagged nginx:latest
+798c8c0a3cd2c8f1105cbe3e4ea7860ad083dec211406df65dbf5dd4ea82a2eb
+Finished: SUCCESS

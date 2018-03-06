@@ -1,0 +1,103 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/nginx
+[nginx] $ /bin/sh -xe /tmp/jenkins4455208612300610140.sh
++ bash build.sh
+passenger-ruby
+passenger-ruby
+Sending build context to Docker daemon  5.632kB
+Step 1/32 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/32 : RUN apt-get update
+ ---> Using cache
+ ---> 807df0336fa9
+Step 3/32 : RUN apt-get install -y dirmngr gnupg
+ ---> Using cache
+ ---> d47f19aad663
+Step 4/32 : RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+ ---> Using cache
+ ---> b17f1711d09e
+Step 5/32 : RUN apt-get install -y apt-transport-https ca-certificates
+ ---> Using cache
+ ---> e1ac4c9935c1
+Step 6/32 : RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+ ---> Using cache
+ ---> e8fc7da0f49b
+Step 7/32 : RUN apt-get update
+ ---> Using cache
+ ---> 432c8824179b
+Step 8/32 : RUN apt-get install -y nginx-extras passenger
+ ---> Using cache
+ ---> cfbfdee54d4c
+Step 9/32 : RUN sed 's/\# include \/etc\/nginx\/passenger.conf;/include \/etc\/nginx\/passenger.conf;/' -i /etc/nginx/nginx.conf
+ ---> Using cache
+ ---> 8473a632eb44
+Step 10/32 : RUN service nginx restart
+ ---> Using cache
+ ---> 9f8ff1a2944e
+Step 11/32 : RUN apt-get install -y git
+ ---> Using cache
+ ---> e8501b602332
+Step 12/32 : RUN cd /var/
+ ---> Using cache
+ ---> 096887d4a808
+Step 13/32 : RUN git clone https://github.com/phusion/passenger-ruby-rails-demo.git
+ ---> Using cache
+ ---> dcb24ce65cb4
+Step 14/32 : RUN cd passenger-ruby-rails-demo
+ ---> Using cache
+ ---> d1bd473d31a8
+Step 15/32 : RUN echo 'gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"' > Gemfile
+ ---> Using cache
+ ---> 8f0a02fe80e3
+Step 16/32 : RUN apt-get install -y curl
+ ---> Using cache
+ ---> 45ac42f63726
+Step 17/32 : RUN apt-get install -y gem
+ ---> Using cache
+ ---> 5c2dbe3bcd0a
+Step 18/32 : RUN apt-get install -y ruby-dev
+ ---> Using cache
+ ---> 221cf3634ecf
+Step 19/32 : RUN apt-get install -y make
+ ---> Using cache
+ ---> 22cab760f42c
+Step 20/32 : RUN apt-get install -y gcc
+ ---> Using cache
+ ---> 1369741bac6f
+Step 21/32 : RUN gem install -y json
+ ---> Using cache
+ ---> f67ed8f97c85
+Step 22/32 : RUN apt-get install -y zlib1g-dev
+ ---> Using cache
+ ---> 82d2fd461d22
+Step 23/32 : RUN apt-get update
+ ---> Using cache
+ ---> 440c4e960211
+Step 24/32 : RUN apt-get install libxml2-dev
+ ---> Using cache
+ ---> d24c1aa6bdd0
+Step 25/32 : RUN apt-get install libxslt-dev
+ ---> Using cache
+ ---> 72961e1eb7b0
+Step 26/32 : RUN gem install -y debug_inspector
+ ---> Running in 5efc28f23fad
+INFO:  `gem install -y` is now default and will be removed
+INFO:  use --ignore-dependencies to install only the gems you list
+Building native extensions.  This could take a while...
+Successfully installed debug_inspector-0.0.3
+1 gem installed
+Installing ri documentation for debug_inspector-0.0.3...
+Installing RDoc documentation for debug_inspector-0.0.3...
+Removing intermediate container 5efc28f23fad
+ ---> b133e484f46b
+Step 27/32 : RUN gem install -y passenger
+ ---> Running in d173fb0ccee3
+[91mERROR:  Error installing passenger:
+	rake requires Ruby version >= 2.0.0.[0m[91m
+[0mINFO:  `gem install -y` is now default and will be removed
+INFO:  use --ignore-dependencies to install only the gems you list
+The command '/bin/sh -c gem install -y passenger' returned a non-zero code: 1
+e837b4cafdd48038707968af4e04a2404f06c68951caeb547e83ae1b9ffa6e38
+docker: Error response from daemon: driver failed programming external connectivity on endpoint passenger-ruby (5ea9e0aea370b8ad312732462300e14f85ec607f49f62d5524e505654891d855): Bind for 0.0.0.0:80 failed: port is already allocated.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

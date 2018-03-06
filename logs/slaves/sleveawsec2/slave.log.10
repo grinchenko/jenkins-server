@@ -1,0 +1,24 @@
+[03/05/18 23:18:22] [SSH] Opening SSH connection to 172.17.0.1:22.
+/root/.ssh/known_hosts [SSH] No Known Hosts file was found at /root/.ssh/known_hosts. Please ensure one is created at this path and that Jenkins can read it.
+Key exchange was not finished, connection is closed.
+java.io.IOException: There was a problem while connecting to 172.17.0.1:22
+	at com.trilead.ssh2.Connection.connect(Connection.java:834)
+	at hudson.plugins.sshslaves.SSHLauncher.openConnection(SSHLauncher.java:1324)
+	at hudson.plugins.sshslaves.SSHLauncher$2.call(SSHLauncher.java:831)
+	at hudson.plugins.sshslaves.SSHLauncher$2.call(SSHLauncher.java:820)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Key exchange was not finished, connection is closed.
+	at com.trilead.ssh2.transport.KexManager.getOrWaitForConnectionInfo(KexManager.java:95)
+	at com.trilead.ssh2.transport.TransportManager.getConnectionInfo(TransportManager.java:237)
+	at com.trilead.ssh2.Connection.connect(Connection.java:786)
+	... 7 more
+Caused by: java.io.IOException: The server hostkey was not accepted by the verifier callback
+	at com.trilead.ssh2.transport.KexManager.handleMessage(KexManager.java:548)
+	at com.trilead.ssh2.transport.TransportManager.receiveLoop(TransportManager.java:790)
+	at com.trilead.ssh2.transport.TransportManager$1.run(TransportManager.java:502)
+	... 1 more
+[03/05/18 23:18:22] Launch failed - cleaning up connection
+[03/05/18 23:18:22] [SSH] Connection closed.

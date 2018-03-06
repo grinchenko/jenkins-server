@@ -1,0 +1,48 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/nginx
+[nginx] $ /bin/sh -xe /tmp/jenkins3203990380446218456.sh
++ bash build.sh
+Error response from daemon: No such container: passenger-ruby
+Error: No such container: passenger-ruby
+Sending build context to Docker daemon  3.584kB
+Step 1/17 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/17 : RUN apt-get update
+ ---> Using cache
+ ---> 807df0336fa9
+Step 3/17 : RUN apt-get install -y dirmngr gnupg
+ ---> Using cache
+ ---> d47f19aad663
+Step 4/17 : RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+ ---> Using cache
+ ---> b17f1711d09e
+Step 5/17 : RUN apt-get install -y apt-transport-https ca-certificates
+ ---> Using cache
+ ---> e1ac4c9935c1
+Step 6/17 : RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
+ ---> Using cache
+ ---> 87fbf374c9d0
+Step 7/17 : RUN apt-get update
+ ---> Using cache
+ ---> 3b68466f1eb0
+Step 8/17 : RUN apt-get install -y nginx-common
+ ---> Running in f7b05392ae61
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ nginx-common : Depends: lsb-base (>= 4.1+Debian11ubuntu7) but 4.1+Debian11ubuntu6.2 is to be installed
+                Depends: init-system-helpers (>= 1.18~) but 1.14ubuntu1 is to be installed
+[91mE[0m[91m: [0m[91mUnable to correct problems, you have held broken packages.[0m[91m
+[0mThe command '/bin/sh -c apt-get install -y nginx-common' returned a non-zero code: 100
+Unable to find image 'passenger-ruby:latest' locally
+docker: Error response from daemon: pull access denied for passenger-ruby, repository does not exist or may require 'docker login'.
+See 'docker run --help'.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

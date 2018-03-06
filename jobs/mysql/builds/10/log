@@ -1,0 +1,26 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/mysql
+[mysql] $ /bin/sh -xe /tmp/jenkins6145941391662813292.sh
++ bash build.sh
+Error response from daemon: No such container: mysql
+Error: No such container: mysql
+Sending build context to Docker daemon  4.096kB
+Step 1/5 : FROM ubuntu:14.04
+ ---> dc4491992653
+Step 2/5 : RUN apt-get update  && DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server && rm -rf /var/lib/mysql
+ ---> Using cache
+ ---> 5117cdd87e89
+Step 3/5 : ADD  initBD.sh /
+ ---> Using cache
+ ---> 2275d7b14531
+Step 4/5 : RUN chmod +x /initBD.sh
+ ---> Using cache
+ ---> ec0818e39dff
+Step 5/5 : CMD ./initBD.sh
+ ---> Running in b98264dba1b8
+Removing intermediate container b98264dba1b8
+ ---> 48fa4261768b
+Successfully built 48fa4261768b
+Successfully tagged mysql:latest
+1be5cbf39457dfcaec9c79be0582ae7dafb751bfeee086189c3f398cb28cda68
+Finished: SUCCESS

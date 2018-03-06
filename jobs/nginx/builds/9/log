@@ -1,0 +1,142 @@
+Started by user [8mha:////4PdBlXZXyAMA7XNsOnpgXrZqTKbqBJAGx/mNAYOo1mfOAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building remotely on [8mha:////4A7Gn+ME3cpPkdEgzkLSXq/YYCqUn2cPCd0D5fZWMAE+AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzuEgZR/eT83ILSktQi/eKc1LLUxPLi1GQjAMWxlgjKAAAA[0msleveawsec2 in workspace /home/jenkins/workspace/nginx
+[nginx] $ /bin/sh -xe /tmp/jenkins7943003803175751849.sh
++ bash build.sh
+passenger-ruby
+passenger-ruby
+Sending build context to Docker daemon  4.096kB
+Step 1/29 : FROM ubuntu:trusty
+ ---> dc4491992653
+Step 2/29 : RUN apt-get update
+ ---> Using cache
+ ---> 807df0336fa9
+Step 3/29 : RUN apt-get install -y dirmngr gnupg
+ ---> Using cache
+ ---> d47f19aad663
+Step 4/29 : RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+ ---> Using cache
+ ---> b17f1711d09e
+Step 5/29 : RUN apt-get install -y apt-transport-https ca-certificates
+ ---> Using cache
+ ---> e1ac4c9935c1
+Step 6/29 : RUN sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+ ---> Using cache
+ ---> e8fc7da0f49b
+Step 7/29 : RUN apt-get update
+ ---> Using cache
+ ---> 432c8824179b
+Step 8/29 : RUN apt-get install -y nginx-extras passenger
+ ---> Using cache
+ ---> cfbfdee54d4c
+Step 9/29 : RUN sed 's/\# include \/etc\/nginx\/passenger.conf;/include \/etc\/nginx\/passenger.conf;/' -i /etc/nginx/nginx.conf
+ ---> Using cache
+ ---> 8473a632eb44
+Step 10/29 : RUN service nginx restart
+ ---> Using cache
+ ---> 9f8ff1a2944e
+Step 11/29 : RUN apt-get install -y git
+ ---> Using cache
+ ---> e8501b602332
+Step 12/29 : RUN cd /var/
+ ---> Using cache
+ ---> 096887d4a808
+Step 13/29 : RUN git clone https://github.com/phusion/passenger-ruby-rails-demo.git
+ ---> Using cache
+ ---> dcb24ce65cb4
+Step 14/29 : RUN cd passenger-ruby-rails-demo
+ ---> Using cache
+ ---> d1bd473d31a8
+Step 15/29 : RUN echo 'gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"' > Gemfile
+ ---> Using cache
+ ---> 8f0a02fe80e3
+Step 16/29 : RUN apt-get install curl
+ ---> Running in 9539ade69430
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  curl
+0 upgraded, 1 newly installed, 0 to remove and 9 not upgraded.
+Need to get 123 kB of archives.
+After this operation, 315 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main curl amd64 7.35.0-1ubuntu2.14 [123 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (TERM is not set, so the dialog frontend is not usable.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 123 kB in 0s (154 kB/s)
+Selecting previously unselected package curl.
+(Reading database ... 16094 files and directories currently installed.)
+Preparing to unpack .../curl_7.35.0-1ubuntu2.14_amd64.deb ...
+Unpacking curl (7.35.0-1ubuntu2.14) ...
+Setting up curl (7.35.0-1ubuntu2.14) ...
+Removing intermediate container 9539ade69430
+ ---> 803b577dcf57
+Step 17/29 : RUN apt-get install gem
+ ---> Running in b2c2258d3620
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  gcc-4.8-base gem-doc gem-extra gem-plugin-gmerlin gem-plugin-lqt
+  gem-plugin-magick gem-plugin-v4l2 ghostscript gsfonts imagemagick-common
+  liba52-0.7.4 libasound2 libasound2-data libavahi-client3
+  libavahi-common-data libavahi-common3 libavcodec54 libavformat54 libavutil52
+  libcdio13 libcups2 libcupsfilters1 libcupsimage2 libdca0 libdrm-intel1
+  libdrm-nouveau2 libdrm-radeon1 libdv4 libdvdnav4 libdvdread4 libelf1
+  libfaad2 libfftw3-double3 libflac8 libftgl2 libgavl1 libgl1-mesa-dri
+  libgl1-mesa-glx libglapi-mesa libglew1.10 libglib2.0-0 libglib2.0-data
+  libglu1-mesa libgmerlin-avdec1 libgomp1 libgs9 libgs9-common libgsm1
+  libijs-0.35 libjack-jackd2-0 libjasper1 libjbig2dec0 liblcms2-2 libllvm3.4
+  liblqr-1-0 libltdl7 libmad0 libmagick++5 libmagickcore5 libmagickwand5
+  libmjpegutils-2.1-0 libmp3lame0 libmpeg2-4 libogg0 libopenjpeg2 libopus0
+  liborc-0.4-0 libpaper-utils libpaper1 libpciaccess0 libportaudio2
+  libpostproc52 libquicktime2 libsamplerate0 libschroedinger-1.0-0 libspeex1
+  libstdc++6 libswscale2 libtheora0 libtxc-dxtn-s2tc0 libv4l-0 libv4lconvert0
+  libva1 libvdpau1 libvorbis0a libvorbisenc2 libx11-xcb1 libx264-142
+  libxcb-dri2-0 libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-sync1
+  libxdamage1 libxfixes3 libxshmfence1 libxvidcore4 libxxf86vm1 poppler-data
+  puredata-core shared-mime-info
+Suggested packages:
+  pd-zexy ttf-dejavu v4l2loopback-dkms v4l2loopback-modules ghostscript-x
+  hpijs libasound2-plugins alsa-utils cups-common libdv-bin oss-compat
+  libdvdcss2 build-essential debhelper fakeroot libfftw3-bin libfftw3-dev
+  libglide3 glew-utils fonts-droid jackd2 libjasper-runtime liblcms2-utils
+  libmagickcore5-extra opus-tools pciutils speex nvidia-vdpau-driver
+  vdpau-driver poppler-utils fonts-japanese-mincho fonts-ipafont-mincho
+  fonts-japanese-gothic fonts-ipafont-gothic fonts-arphic-ukai
+  fonts-arphic-uming fonts-unfonts-core
+The following NEW packages will be installed:
+  gem gem-doc gem-extra gem-plugin-gmerlin gem-plugin-lqt gem-plugin-magick
+  gem-plugin-v4l2 ghostscript gsfonts imagemagick-common liba52-0.7.4
+  libasound2 libasound2-data libavahi-client3 libavahi-common-data
+  libavahi-common3 libavcodec54 libavformat54 libavutil52 libcdio13 libcups2
+  libcupsfilters1 libcupsimage2 libdca0 libdrm-intel1 libdrm-nouveau2
+  libdrm-radeon1 libdv4 libdvdnav4 libdvdread4 libelf1 libfaad2
+  libfftw3-double3 libflac8 libftgl2 libgavl1 libgl1-mesa-dri libgl1-mesa-glx
+  libglapi-mesa libglew1.10 libglib2.0-0 libglib2.0-data libglu1-mesa
+  libgmerlin-avdec1 libgomp1 libgs9 libgs9-common libgsm1 libijs-0.35
+  libjack-jackd2-0 libjasper1 libjbig2dec0 liblcms2-2 libllvm3.4 liblqr-1-0
+  libltdl7 libmad0 libmagick++5 libmagickcore5 libmagickwand5
+  libmjpegutils-2.1-0 libmp3lame0 libmpeg2-4 libogg0 libopenjpeg2 libopus0
+  liborc-0.4-0 libpaper-utils libpaper1 libpciaccess0 libportaudio2
+  libpostproc52 libquicktime2 libsamplerate0 libschroedinger-1.0-0 libspeex1
+  libswscale2 libtheora0 libtxc-dxtn-s2tc0 libv4l-0 libv4lconvert0 libva1
+  libvdpau1 libvorbis0a libvorbisenc2 libx11-xcb1 libx264-142 libxcb-dri2-0
+  libxcb-dri3-0 libxcb-glx0 libxcb-present0 libxcb-sync1 libxdamage1
+  libxfixes3 libxshmfence1 libxvidcore4 libxxf86vm1 poppler-data puredata-core
+  shared-mime-info
+The following packages will be upgraded:
+  gcc-4.8-base libstdc++6
+2 upgraded, 100 newly installed, 0 to remove and 7 not upgraded.
+Need to get 43.5 MB of archives.
+After this operation, 166 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+The command '/bin/sh -c apt-get install gem' returned a non-zero code: 1
+af3d4a195a755430a6b6b91702389a0d980932cc65b4574317657e895df55db9
+docker: Error response from daemon: driver failed programming external connectivity on endpoint passenger-ruby (1d083b9cfed158c62704c75f0f0fc9cd3321b86387917a1054154697804b4dc4): Bind for 0.0.0.0:80 failed: port is already allocated.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
